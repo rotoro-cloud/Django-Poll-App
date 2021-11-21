@@ -1,38 +1,73 @@
 # Django-Poll-App
 
-Django poll app is a full featured polling app. You have to register in this app to show the polls and to vote. If you already voted you can not vote again. Only the owner of a poll can add poll , edit poll, update poll, delete poll , add choice, update choice, delete choice and end a poll. If a poll is ended it can not be voted. Ended poll only shows user the final result of the poll. There is a search option for polls. Also user can filter polls by name, publish date, and by number of voted. Pagination will work even after applying filter.
+Приложение Django poll - это полнофункциональное приложение для опросов. Вы должны зарегистрироваться в этом приложении, чтобы смотреть опросы и голосовать. Если вы уже проголосовали, то вы не можете проголосовать снова. Только владелец опроса может редактировать, обновлять, удалять опрос, удалять данные из голосования и завершать опрос. Если опрос завершен, в нем нельзя голосовать. Завершенный опрос показывает пользователю только окончательный результат. Есть возможность поиска по опросам. Также пользователь может фильтровать опросы по имени, дате публикации и количеству проголосовавших. Пагинация будет работать даже после применения фильтра.
 
-<h1>Getting Started</h1>
-<p>These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.</p>
+<h1>Как начать</h1>
+<p>Эти инструкции позволят вам запустить копию проекта на вашем локальном компьютере в целях разработки и тестирования.</p>
 
-<h2>Prerequisites</h2>
-<code>python== 3.5 or up and django==2.0 or up</code>
+<h2>Предварительные требования</h2>
 
-<h2>Installing</h2>
-<pre>open terminal and type</pre>
-<code>git clone https://github.com/devmahmud/Django-poll-app.git</code><br><br>
+`python >= 3.5, django>=2.0`
 
-<h4>or simply download using the url below</h4>
-<code>https://github.com/devmahmud/Django-poll-app.git</code><br>
+<h2>Установка</h2>
+Склонируй репозиторий
 
-<h2>To migrate the database open terminal in project directory and type</h2>
-<code>python manage.py makemigrations</code><br>
-<code>python manage.py migrate</code>
+```
+git clone https://github.com/rotoro-cloud/Django-Poll-App.git
+```
 
-<h2>To use admin panel you need to create superuser using this command </h2>
-<code>python manage.py createsuperuser</code>
+Установи зависимости python
 
-<h2>To Create some dummy text data for your app follow the step below:</h2>
-<code>pip install faker</code>
-<code>python manage.py shell</code>
-<code>import seeder</code>
-<code>seeder.seed_all(30)</code>
-<p>Here 30 is a number of entry. You can use it as your own</p>
+```
+pip install -r requirements.txt
+```
 
-<h2> To run the program in local server use the following command </h2>
-<code>python manage.py runserver</code>
+Установи утилиты работы с БД
 
-<p>Then go to http://127.0.0.1:8000 in your browser</p>
+```
+pip install mysqlclient
+```
+
+<h2>Настройка</h2>
+Приложение настроено на работу с MySQL. База уже установлена. Настройки находятся в файле `pollme/settings.py`. Тебе нужно добавить их в локальную MySQL
+
+```
+sudo vi lets_quiz/settings.py
+```
+
+Добавь нужные данные
+
+```
+[client] 
+database = lets_quiz  
+user = djangouser  
+password = PASSWORD  
+default-character-set = utf8
+```
+
+Перезапусти MySQL
+```
+sudo systemctl daemon-reload
+sudo systemctl restart mysql
+```
+
+Создай структуру БД
+```
+python3 manage.py migrate
+```
+
+Создай пользователя для администрирования
+```
+python3 manage.py createsuperuser
+```
+
+<h2>Запуск</h2>
+Приложение запускается на 8000 порту
+```
+python3 manage.py runserver 0.0.0.0:8000
+```
+
+<p>Приложение будет доступно http://YOUR-IP:8000 твоего браузера</p>
 
 <h2>Project snapshot</h2>
 <h3>Home page</h3>
