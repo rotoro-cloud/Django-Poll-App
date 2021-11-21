@@ -62,12 +62,15 @@ python3 manage.py createsuperuser
 ```
 
 <h2>Запуск</h2>
+
 Приложение запускается на 8000 порту
+
+
 ```
 python3 manage.py runserver 0.0.0.0:8000
 ```
 
-<p>Приложение будет доступно http://YOUR-IP:8000 твоего браузера</p>
+<p>Приложение будет доступно по адресу "http://YOUR-IP:8000" из твоего браузера</p>
 
 <h2>Project snapshot</h2>
 <h3>Home page</h3>
