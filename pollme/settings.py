@@ -82,25 +82,16 @@ WSGI_APPLICATION = 'pollme.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'OPTIONS': {
-#             'read_default_file': '/etc/mysql/my.cnf',
-#         },
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'lets_quiz',
-        'USER': 'djangouser',
-        'PASSWORD': 'PASSWORD',
-        'HOST': 'localhost',
-        'PORT': '6033',
+        'OPTIONS': {
+            'read_default_file': '/etc/mysql/my.cnf',
+        },
     }
 }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
