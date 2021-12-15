@@ -25,8 +25,8 @@ SECRET_KEY = 'x*za6xf&_80ofdpae!yzq61g9ffikkx9$*iygbl$j7rr4wlf8t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '.katacoda.com']
-
+#ALLOWED_HOSTS = ['127.0.0.1', '.katacoda.com']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -82,15 +82,25 @@ WSGI_APPLICATION = 'pollme.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'OPTIONS': {
+#             'read_default_file': '/etc/mysql/my.cnf',
+#         },
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': '/etc/mysql/my.cnf',
-        },
+        'NAME': 'lets_quiz',
+        'USER': 'djangouser',
+        'PASSWORD': 'PASSWORD',
+        'HOST': 'localhost',
+        'PORT': '6033',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
